@@ -1,0 +1,43 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environment
+venv/
+.env/
+env/
+.venv/
+
+# Django migration files
+**/migrations/
+!**/migrations/__init__.py  # Keep the __init__.py so Django recognizes the folder
+
+# Logs
+*.log
+*.pot
+*.pyc
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+
+# Database
+db.sqlite3
+
+# Environment variables file
+*.env
+
+# Static and media files (optional)
+staticfiles/
+media/
