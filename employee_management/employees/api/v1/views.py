@@ -64,18 +64,8 @@ class EmployeeViewSet(viewsets.ModelViewSet):
         return Response(output_serializer.data, status=status.HTTP_201_CREATED)
 
     def update(self, request, *args, **kwargs):
-        """Update an employee"""
         partial = kwargs.pop("partial", False)
         instance = self.get_object()
-
-        # Handle department as string if provided
-        if "department" in request.data and isinstance(request.data["department"], str):
-            department_name = request.data.pop("department")
-            department, _ = Department.objects.get_or_create(
-                name=department_name,
-                defaults={"description": f"{department_name} Department"},
-            )
-            request.data["department_id"] = department.id
 
         serializer = self.get_serializer(instance, data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)
