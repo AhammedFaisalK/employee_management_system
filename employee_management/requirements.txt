@@ -4,6 +4,7 @@ black==25.9.0
 click==8.3.0
 Django==5.2.7
 django-debug-toolbar==6.0.0
+django-extensions==4.1
 django-filter==25.2
 django-querycount==0.8.3
 djangorestframework==3.16.1
