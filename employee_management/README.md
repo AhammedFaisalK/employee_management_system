@@ -1,45 +1,37 @@
-🧑‍💼 Employee Management System
+# 🧑‍💼 Employee Management System
 
-A Django-based RESTful API for managing employees and departments.
-The project includes features like employee CRUD operations, department management, filtering, search, pagination, CSV/JSON export, and API documentation with Swagger/Redoc.
+A **Django-based RESTful API** for managing employees and departments. The project includes features like employee CRUD operations, department management, filtering, search, pagination, CSV/JSON export, and API documentation with Swagger/Redoc.
 
-🚀 Features
+---
 
-Manage Employees: Create, read, update, and soft delete employees.
+## 🚀 Features
 
-Manage Departments: CRUD operations with employee count check before deletion.
+- **Manage Employees:** Create, read, update, and soft delete employees.
+- **Manage Departments:** CRUD operations with employee count check before deletion.
+- **Filtering, Searching, and Ordering** for API endpoints.
+- **Pagination** support using custom pagination.
+- **Export Employee Data** in CSV or JSON formats.
+- **API Documentation** available via Swagger and Redoc.
+- **Debug Toolbar and Query Count Middleware** for development.
+- **Pre-populated SQLite database** included for testing.
 
-Filtering, Searching, and Ordering for API endpoints.
+---
 
-Pagination support using custom pagination.
+## 🛠️ Tech Stack
 
-Export Employee Data in CSV or JSON formats.
+- **Backend:** Python 3.11+, Django 5.2
+- **API:** Django REST Framework (DRF)
+- **Database:** SQLite (default DB included)
+- **Other Libraries:**
+  - `drf-spectacular` (OpenAPI/Swagger/Redoc docs)
+  - `django-filter`
+  - `django-debug-toolbar`
+  - `querycount`
 
-API Documentation available via Swagger and Redoc.
+---
 
-Debug Toolbar and Query Count Middleware for development.
+## 📂 Project Structure
 
-Pre-populated SQLite database included for testing.
-
-🛠️ Tech Stack
-
-Backend: Python 3.11+, Django 5.2
-
-API: Django REST Framework (DRF)
-
-Database: SQLite (default DB included)
-
-Other Libraries
-
-drf-spectacular (OpenAPI/Swagger/Redoc docs)
-
-django-filter
-
-django-debug-toolbar
-
-querycount
-
-📂 Project Structure
 employee_management/
 ├── employee_management/ # Django project settings
 │ ├── settings.py
@@ -60,18 +52,23 @@ employee_management/
 ├── manage.py
 └── requirements.txt
 
-⚙️ Getting Started
+---
 
-Follow these steps to run the project locally.
+## ⚙️ Getting Started
 
-1️⃣ Clone the Repository
-git clone (https://github.com/AhammedFaisalK/employee_management_system.git)
+Follow these steps to run the project locally:
+
+1️⃣ **Clone the repository**
+
+```bash
+git clone https://github.com/AhammedFaisalK/employee_management_system.git
 cd employee_management
+
 
 2️⃣ Create a Virtual Environment
 python -m venv venv
-source venv/bin/activate # Linux/macOS
-venv\Scripts\activate # Windows
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
 
 3️⃣ Install Dependencies
 pip install --upgrade pip
@@ -123,3 +120,4 @@ Create a pull request.
 🪪 License
 
 This project is open-source and free to use.
+```
