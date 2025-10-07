@@ -32,8 +32,6 @@ Thumbs.db
 # Byte-compiled / optimized / DLL files
 *.py[cod]
 
-# Database
-db.sqlite3
 
 # Environment variables file
 *.env
