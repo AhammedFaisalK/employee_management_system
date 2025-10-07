@@ -1,0 +1,21 @@
+[tool.black]
+line-length = 88
+target-version = ['py312']
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | venv
+  | __pycache__
+  | db\.sqlite3
+  | migrations
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_first_party = "employees,employee_management"
+multi_line_output = 3
+include_trailing_comma = true
+skip = ["migrations", "__pycache__", "db.sqlite3"]
