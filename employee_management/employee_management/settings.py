@@ -28,13 +28,16 @@ INSTALLED_APPS = [
 
     # Third party apps
     'rest_framework',
+    'drf_spectacular',
     'django_filters',
+    'debug_toolbar', 
     # Local apps
     'employees',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -43,9 +46,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+MIDDLEWARE += [
+    'querycount.middleware.QueryCountMiddleware',
+]
+
 
 # REST Framework Configuration
 REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_FILTER_BACKENDS': [
         'django_filters.rest_framework.DjangoFilterBackend',
         'rest_framework.filters.SearchFilter',
@@ -61,7 +69,13 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.MultiPartParser',
     ],
     'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
-    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Employee Management API',
+    'DESCRIPTION': 'API documentation for the Employee Management system.',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
 }
 
 
@@ -133,3 +147,23 @@ STATIC_URL = 'static/'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
+
+DEBUG_TOOLBAR_PANELS = [
+    'debug_toolbar.panels.timer.TimerPanel',
+    'debug_toolbar.panels.sql.SQLPanel',
+    'debug_toolbar.panels.templates.TemplatesPanel',
+    'debug_toolbar.panels.request.RequestPanel',
+    'debug_toolbar.panels.cache.CachePanel',
+    'debug_toolbar.panels.headers.HeadersPanel',
+]
+
+QUERYCOUNT = {
+    "DISPLAY_DUPLICATES": True,  # Show duplicate queries
+    "DISPLAY_TOTAL": True,       # Show total query count
+    "MIN_DURATION": 0.01,        # Log queries longer than 0.01s
+    "RESET_ON_LOG": True,        # Reset counter after each request
+}
