@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # Third party apps
     "rest_framework",
+    "django_extensions",
     "drf_spectacular",
     "django_filters",
     "debug_toolbar",

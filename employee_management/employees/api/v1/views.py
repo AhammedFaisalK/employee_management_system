@@ -82,7 +82,7 @@ class EmployeeViewSet(viewsets.ModelViewSet):
             status=status.HTTP_204_NO_CONTENT,
         )
 
-    @action(detail=False, methods=["get"])
+    @action(detail=False, methods=["get"], url_path='export')
     def export(self, request):
         """
         Export employees as CSV or JSON

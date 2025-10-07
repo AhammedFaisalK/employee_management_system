@@ -11,7 +11,7 @@ from employees.api.v1 import urls as employee_api_urls
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/v1/employees/", include(employee_api_urls, namespace="api_v1_employees")),
+    path("api/v1/", include(employee_api_urls, namespace="api_v1_employees")),
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     path(
         "api/docs/",
