@@ -45,6 +45,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+# Additional middleware
 MIDDLEWARE += [
     "querycount.middleware.QueryCountMiddleware",
 ]
@@ -70,6 +71,7 @@ REST_FRAMEWORK = {
     "EXCEPTION_HANDLER": "rest_framework.views.exception_handler",
 }
 
+# DRF Spectacular settings for OpenAPI schema
 SPECTACULAR_SETTINGS = {
     "TITLE": "Employee Management API",
     "DESCRIPTION": "API documentation for the Employee Management system.",
@@ -142,10 +144,13 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# Internal IPs for debug toolbar
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
+
+# Debug toolbar panels
 DEBUG_TOOLBAR_PANELS = [
     "debug_toolbar.panels.timer.TimerPanel",
     "debug_toolbar.panels.sql.SQLPanel",
@@ -155,6 +160,7 @@ DEBUG_TOOLBAR_PANELS = [
     "debug_toolbar.panels.headers.HeadersPanel",
 ]
 
+# QueryCount middleware settings
 QUERYCOUNT = {
     "DISPLAY_DUPLICATES": True,  # Show duplicate queries
     "DISPLAY_TOTAL": True,  # Show total query count
