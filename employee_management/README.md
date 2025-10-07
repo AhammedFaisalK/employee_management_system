@@ -65,7 +65,7 @@ employee_management/
 Follow these steps to run the project locally.
 
 1️⃣ Clone the Repository
-git clone <your-repo-url>
+git clone (https://github.com/AhammedFaisalK/employee_management_system.git)
 cd employee_management
 
 2️⃣ Create a Virtual Environment
