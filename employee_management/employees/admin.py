@@ -7,7 +7,7 @@ from .models import Department, Employee
 class DepartmentAdmin(admin.ModelAdmin):
     """Admin interface for Department model"""
 
-    list_display = ["name", "employee_count", "created_at", "is_deleted"]
+    list_display = ["id", "name", "employee_count", "created_at", "is_deleted"]
     list_filter = ["is_deleted", "created_at"]
     search_fields = ["name", "description"]
     readonly_fields = ["id", "created_at", "updated_at"]
